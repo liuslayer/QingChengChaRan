@@ -1,0 +1,61 @@
+.about-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+  margin-bottom: 16rpx;
+}
+
+.about-text {
+  font-size: 27rpx;
+  line-height: 1.9;
+  color: var(--winter-brown);
+}
+
+/* ---------------- 联系方式 ---------------- */
+.contact-card {
+  padding-top: 6rpx;
+  padding-bottom: 6rpx;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+
+.contact-item-last {
+  border-bottom: none;
+}
+
+.contact-label {
+  width: 200rpx;
+  flex-shrink: 0;
+  font-size: 26rpx;
+  color: var(--text-weak);
+}
+
+.contact-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--winter-brown);
+  text-align: right;
+}
+
+.contact-link {
+  color: var(--spring-green);
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin-top: 14rpx;
+  text-align: center;
+}
+
+/* ---------------- 版本 ---------------- */
+.version {
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #c3b6a8;
+}

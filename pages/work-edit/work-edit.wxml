@@ -1,0 +1,103 @@
+<view class="page-wrap">
+
+  <!-- 作品图片 -->
+  <view class="section">
+    <view class="section-title">作品图片</view>
+    <view class="img-picker" bindtap="onChooseImage">
+      <image
+        wx:if="{{pendingImage || form.imageFileID}}"
+        class="pick-img"
+        src="{{pendingImage || form.imageFileID}}"
+        mode="aspectFill"
+      />
+      <view wx:else class="pick-empty">
+        <view class="pick-plus">+</view>
+        <view class="pick-hint">拍照或从相册选择</view>
+      </view>
+    </view>
+    <view class="muted pick-note" wx:if="{{pendingImage || form.imageFileID}}">点击图片可重新选择</view>
+  </view>
+
+  <!-- 作品信息 -->
+  <view class="section">
+    <view class="section-title">作品信息</view>
+    <view class="card form-card">
+
+      <view class="form-item">
+        <view class="form-label required">作品名</view>
+        <input
+          class="form-input"
+          value="{{form.name}}"
+          placeholder="给你的作品起个名字"
+          placeholder-class="form-placeholder"
+          maxlength="30"
+          data-field="name"
+          bindinput="onInput"
+        />
+      </view>
+
+      <picker
+        mode="selector"
+        range="{{ingredients}}"
+        value="{{ingredientIndex}}"
+        bindchange="onIngredientChange"
+      >
+        <view class="form-item">
+          <view class="form-label">使用的原料</view>
+          <view class="form-value picker-arrow">{{form.ingredient}}</view>
+        </view>
+      </picker>
+
+      <picker mode="date" value="{{form.date}}" end="{{maxDate}}" bindchange="onDateChange">
+        <view class="form-item form-item-last">
+          <view class="form-label">制作日期</view>
+          <view class="form-value picker-arrow">{{form.date}}</view>
+        </view>
+      </picker>
+
+    </view>
+  </view>
+
+  <!-- 配方与心得 -->
+  <view class="section">
+    <view class="section-title">配方与心得</view>
+    <view class="card">
+
+      <view class="form-block">
+        <view class="form-block-label">染料配方</view>
+        <textarea
+          class="form-textarea"
+          value="{{form.recipe}}"
+          placeholder="例：红茶茶渣 80g + 水 1.2L + 明矾 5g，90℃ 浸染 40 分钟"
+          placeholder-class="form-placeholder"
+          maxlength="200"
+          auto-height
+          data-field="recipe"
+          bindinput="onInput"
+        />
+      </view>
+
+      <view class="form-block form-block-last">
+        <view class="form-block-label">心得（选填）</view>
+        <textarea
+          class="form-textarea"
+          value="{{form.note}}"
+          placeholder="记录这次制作的小发现、小失误或想说的话"
+          placeholder-class="form-placeholder"
+          maxlength="200"
+          auto-height
+          data-field="note"
+          bindinput="onInput"
+        />
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 操作 -->
+  <view class="section submit-area">
+    <view class="btn btn-primary" bindtap="onSave">保存作品</view>
+    <view class="btn btn-delete" wx:if="{{isEdit}}" bindtap="onDelete">删除作品</view>
+  </view>
+
+</view>

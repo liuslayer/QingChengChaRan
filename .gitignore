@@ -1,0 +1,9 @@
+# 微信开发者工具生成的本地私有配置（含本机编译设置）
+project.private.config.json
+
+# 依赖与构建产物
+node_modules/
+miniprogram_npm/
+
+# 大体积视频素材（15MB，已通过 packOptions.ignore 排除出代码包）
+videos/

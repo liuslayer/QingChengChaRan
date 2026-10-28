@@ -1,0 +1,77 @@
+<view class="page-wrap">
+
+  <!-- 我的 -->
+  <view class="profile card">
+    <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{userInfo.avatarUrl}}" class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />
+      <view wx:else class="avatar avatar-empty">+</view>
+    </button>
+
+    <view class="profile-info">
+      <input
+        class="nickname"
+        type="nickname"
+        value="{{userInfo.nickName}}"
+        placeholder="点这里填写昵称"
+        placeholder-class="form-placeholder"
+        bindblur="onNicknameInput"
+        bindchange="onNicknameInput"
+      />
+      <view class="profile-meta">{{works.length}} 件作品 · {{cloudMode ? '已存云端' : '存在本机'}}</view>
+    </view>
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="mine-links card">
+    <view class="mine-link" bindtap="goAbout">
+      <text class="mine-link-text">关于我们</text>
+      <text class="mine-arrow">›</text>
+    </view>
+    <view class="mine-link mine-link-last" bindtap="goAbout">
+      <text class="mine-link-text">联系传承人 / 老师</text>
+      <text class="mine-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 作品列表 -->
+  <view class="section">
+    <view class="works-head">
+      <view class="section-title">我的作品</view>
+      <view class="add-link" wx:if="{{works.length}}" bindtap="goAdd">+ 新增</view>
+    </view>
+
+    <view class="works" wx:if="{{works.length}}">
+      <view
+        class="work-card"
+        wx:for="{{works}}"
+        wx:key="_id"
+        data-id="{{item._id}}"
+        bindtap="goDetail"
+      >
+        <view class="work-img-wrap">
+          <image wx:if="{{item.imageFileID}}" class="work-img" src="{{item.imageFileID}}" mode="aspectFill" />
+          <view wx:else class="work-img img-fallback">无图</view>
+        </view>
+        <view class="work-info">
+          <view class="work-name">{{item.name}}</view>
+          <view class="work-meta">
+            <text class="tag">{{item.ingredient}}</text>
+            <text class="work-date">{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty" wx:elif="{{!loading}}">
+      <view class="empty-title">还没有作品</view>
+      <view class="empty-desc">去记录第一件茶染作品吧</view>
+      <view class="btn btn-primary empty-btn" bindtap="goAdd">新增作品</view>
+    </view>
+
+    <view class="loading-text" wx:else>正在加载…</view>
+  </view>
+
+  <!-- 悬浮新增按钮 -->
+  <view class="fab" wx:if="{{works.length}}" bindtap="goAdd">+</view>
+
+</view>

@@ -1,0 +1,102 @@
+/* ---------------- 图片选择 ---------------- */
+.img-picker {
+  width: 100%;
+  height: 460rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8e0d0 0%, #d9cfbd 100%);
+  border: 2rpx dashed var(--line);
+  box-sizing: border-box;
+}
+
+.pick-img {
+  width: 100%;
+  height: 460rpx;
+  display: block;
+}
+
+.pick-empty {
+  width: 100%;
+  height: 460rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pick-plus {
+  font-size: 72rpx;
+  color: #c3b6a8;
+  line-height: 1;
+  margin-bottom: 16rpx;
+}
+
+.pick-hint {
+  font-size: 26rpx;
+  color: var(--text-weak);
+}
+
+.pick-note {
+  margin-top: 12rpx;
+  text-align: center;
+}
+
+/* ---------------- 表单 ---------------- */
+.form-card {
+  padding-top: 6rpx;
+  padding-bottom: 6rpx;
+}
+
+.form-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--winter-brown);
+  text-align: right;
+  height: 48rpx;
+}
+
+.form-item-last {
+  border-bottom: none !important;
+}
+
+.form-block {
+  padding: 24rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+
+.form-block-last {
+  border-bottom: none;
+}
+
+.form-block-label {
+  font-size: 28rpx;
+  color: var(--winter-brown);
+  margin-bottom: 14rpx;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 140rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: var(--winter-brown);
+  background: var(--paper);
+  border-radius: 14rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* ---------------- 操作区 ---------------- */
+.submit-area {
+  margin-top: 20rpx;
+}
+
+.submit-area .btn {
+  margin-bottom: 24rpx;
+}
+
+.btn-delete {
+  background: #ffffff;
+  color: var(--autumn-red);
+  border: 2rpx solid rgba(181, 113, 74, 0.4);
+}

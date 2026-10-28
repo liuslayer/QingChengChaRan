@@ -1,0 +1,44 @@
+<view class="page-wrap" wx:if="{{work}}">
+
+  <!-- 作品大图 -->
+  <view class="hero" bindtap="onPreviewImage">
+    <image wx:if="{{work.imageFileID}}" class="hero-img" src="{{work.imageFileID}}" mode="aspectFill" />
+    <view wx:else class="hero-img img-fallback">无图</view>
+  </view>
+
+  <!-- 作品信息 -->
+  <view class="card info">
+    <view class="work-title">{{work.name}}</view>
+
+    <view class="info-row">
+      <view class="info-label">使用的原料</view>
+      <view class="info-value">{{work.ingredient || '—'}}</view>
+    </view>
+
+    <view class="info-row">
+      <view class="info-label">染料配方</view>
+      <view class="info-value info-value-block">{{work.recipe || '—'}}</view>
+    </view>
+
+    <view class="info-row">
+      <view class="info-label">制作日期</view>
+      <view class="info-value">{{work.date || '—'}}</view>
+    </view>
+
+    <view class="info-row info-row-last" wx:if="{{work.note}}">
+      <view class="info-label">心得</view>
+      <view class="info-value info-value-block">{{work.note}}</view>
+    </view>
+  </view>
+
+  <!-- 操作 -->
+  <view class="actions">
+    <button class="btn btn-primary share-btn" open-type="share">分享给好友</button>
+    <view class="btn btn-ghost" bindtap="goEdit">编辑</view>
+  </view>
+
+</view>
+
+<view class="empty" wx:else>
+  <view class="empty-desc">正在加载…</view>
+</view>

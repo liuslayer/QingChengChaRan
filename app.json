@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tutorial/tutorial",
+    "pages/recipe/recipe",
+    "pages/works/works",
+    "pages/work-edit/work-edit",
+    "pages/work-detail/work-detail",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F7F2E8",
+    "navigationBarTitleText": "青城拾色",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F2E8"
+  },
+  "tabBar": {
+    "color": "#9A8B7A",
+    "selectedColor": "#7C9A6D",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tutorial/tutorial",
+        "text": "茶染教程"
+      },
+      {
+        "pagePath": "pages/recipe/recipe",
+        "text": "配方参考"
+      },
+      {
+        "pagePath": "pages/works/works",
+        "text": "我的作品"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

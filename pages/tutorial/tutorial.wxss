@@ -1,0 +1,125 @@
+.intro {
+  margin-bottom: 40rpx;
+}
+
+.intro-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+  margin-bottom: 10rpx;
+}
+
+.intro-desc {
+  font-size: 26rpx;
+  color: var(--winter-brown);
+  margin-bottom: 12rpx;
+}
+
+/* ---------------- 主视频 ---------------- */
+.main-video {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 20rpx;
+  background: #e8e0d0;
+}
+
+.video-note {
+  margin-top: 12rpx;
+}
+
+/* ---------------- 步骤 ---------------- */
+.step {
+  position: relative;
+  background: var(--card);
+  border: 2rpx solid var(--line);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(107, 91, 74, 0.06);
+}
+
+.step-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.step-no {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  background: var(--spring-green);
+  color: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+}
+
+.step-img-wrap {
+  width: 100%;
+  min-height: 300rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8e0d0 0%, #d9cfbd 100%);
+  margin-bottom: 20rpx;
+}
+
+.step-img {
+  width: 100%;
+  display: block;
+}
+
+.step-desc {
+  font-size: 26rpx;
+  color: var(--winter-brown);
+  margin-bottom: 16rpx;
+}
+
+.step-points {
+  background: rgba(124, 154, 109, 0.07);
+  border-radius: 14rpx;
+  padding: 18rpx 22rpx;
+}
+
+.step-point {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+
+.step-point:last-child {
+  margin-bottom: 0;
+}
+
+.step-dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: var(--spring-green);
+  margin: 16rpx 16rpx 0 0;
+  flex-shrink: 0;
+}
+
+.step-point-text {
+  flex: 1;
+  font-size: 26rpx;
+  color: var(--winter-brown);
+  line-height: 1.6;
+}
+
+.step-video {
+  width: 100%;
+  height: 360rpx;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  background: #e8e0d0;
+}

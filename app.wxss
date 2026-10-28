@@ -1,0 +1,200 @@
+/* ============================================================
+   青城拾色 · 全局样式
+   设计规范：青城四色 + 宣纸底色，圆角卡片、轻阴影、素雅质感
+   ============================================================ */
+
+page {
+  /* 青城四色 */
+  --spring-green: #7c9a6d; /* 春芽绿 —— 主色、按钮 */
+  --summer-cyan: #6e8b96; /* 夏烟青 —— 辅助色、标签 */
+  --autumn-red: #b5714a; /* 秋落赭 —— 强调色 */
+  --winter-brown: #6b5b4a; /* 冬岩褐 —— 正文标题 */
+  /* 底色与线条 */
+  --paper: #f7f2e8; /* 宣纸白 —— 页面背景 */
+  --line: #e3dacb; /* 描边灰 */
+  --card: #ffffff;
+  --text-weak: #9a8b7a;
+
+  background-color: var(--paper);
+  color: var(--winter-brown);
+  font-size: 28rpx;
+  line-height: 1.7;
+  font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+}
+
+/* ---------------- 布局容器 ---------------- */
+.page-wrap {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 32rpx 32rpx 60rpx;
+}
+
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  width: 8rpx;
+  height: 30rpx;
+  margin-right: 14rpx;
+  border-radius: 4rpx;
+  background: var(--spring-green);
+}
+
+.muted {
+  color: var(--text-weak);
+  font-size: 24rpx;
+}
+
+/* ---------------- 卡片 ---------------- */
+.card {
+  background: var(--card);
+  border: 2rpx solid var(--line);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(107, 91, 74, 0.06);
+}
+
+/* ---------------- 按钮 ---------------- */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92rpx;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: var(--spring-green);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: var(--summer-cyan);
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background: #ffffff;
+  color: var(--winter-brown);
+  border: 2rpx solid var(--line);
+}
+
+.btn:active {
+  opacity: 0.85;
+}
+
+.btn[disabled] {
+  opacity: 0.5;
+}
+
+/* 去掉小程序 button 组件的默认边框与背景 */
+button.btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+button.btn::after {
+  border: none;
+}
+
+/* ---------------- 标签 ---------------- */
+.tag {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  line-height: 1.6;
+  background: rgba(110, 139, 150, 0.12);
+  color: var(--summer-cyan);
+}
+
+/* ---------------- 表单 ---------------- */
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.form-label {
+  width: 180rpx;
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: var(--winter-brown);
+}
+
+.form-label.required::after {
+  content: '*';
+  color: var(--autumn-red);
+  margin-left: 6rpx;
+}
+
+.form-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--winter-brown);
+  text-align: right;
+}
+
+.form-placeholder {
+  color: #c3b6a8;
+}
+
+.picker-arrow::after {
+  content: '›';
+  color: #c3b6a8;
+  font-size: 34rpx;
+  margin-left: 10rpx;
+}
+
+/* ---------------- 空状态 ---------------- */
+.empty {
+  padding: 120rpx 40rpx;
+  text-align: center;
+}
+
+.empty-title {
+  font-size: 30rpx;
+  color: var(--winter-brown);
+  margin-bottom: 12rpx;
+}
+
+.empty-desc {
+  font-size: 24rpx;
+  color: var(--text-weak);
+  margin-bottom: 40rpx;
+}
+
+/* ---------------- 图片兜底（占位图加载失败时） ---------------- */
+.img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8e0d0 0%, #d9cfbd 100%);
+  color: var(--text-weak);
+  font-size: 24rpx;
+}
+
+/* ---------------- 安全区 ---------------- */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

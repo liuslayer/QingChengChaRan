@@ -1,0 +1,72 @@
+<view class="page-wrap">
+
+  <!-- 导语 -->
+  <view class="intro card">
+    <view class="intro-title">配方参考</view>
+    <view class="intro-desc">选好你手上的原料和布料，一键拿到推荐配方，照着做就行。</view>
+  </view>
+
+  <!-- 选择条件 -->
+  <view class="section">
+    <view class="section-title">选择条件</view>
+    <view class="card select-card">
+
+      <picker
+        mode="selector"
+        range="{{ingredients}}"
+        value="{{ingredientIndex}}"
+        bindchange="onIngredientChange"
+      >
+        <view class="form-item">
+          <view class="form-label">原料</view>
+          <view class="form-value picker-arrow">{{ingredients[ingredientIndex]}}</view>
+        </view>
+      </picker>
+
+      <picker
+        mode="selector"
+        range="{{fabrics}}"
+        value="{{fabricIndex}}"
+        bindchange="onFabricChange"
+      >
+        <view class="form-item form-item-last">
+          <view class="form-label">布料</view>
+          <view class="form-value picker-arrow">{{fabrics[fabricIndex]}}</view>
+        </view>
+      </picker>
+
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <view class="btn btn-ghost act-reset" bindtap="onReset">重置</view>
+    <view class="btn btn-primary act-search" bindtap="onSearch">查看推荐配方</view>
+  </view>
+
+  <!-- 结果 -->
+  <view class="section" wx:if="{{searched}}">
+    <view class="section-title">推荐配方</view>
+    <view class="card">
+      <view class="result-head">
+        <text class="tag">{{result.ingredient}}</text>
+        <text class="tag tag-alt">{{result.fabric}}</text>
+      </view>
+
+      <view class="result-row" wx:for="{{resultRows}}" wx:key="label">
+        <view class="result-label">{{item.label}}</view>
+        <view class="result-value">{{item.value}}</view>
+      </view>
+
+      <view class="result-tip">
+        <view class="result-tip-label">提示</view>
+        <view class="result-tip-text">{{result.tip}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="placeholder" wx:else>
+    <view class="placeholder-text">选择原料与布料后，点上方按钮查看配方</view>
+  </view>
+
+</view>

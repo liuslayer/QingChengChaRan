@@ -1,0 +1,73 @@
+/* ---------------- 大图 ---------------- */
+.hero {
+  width: 100%;
+  height: 620rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8e0d0 0%, #d9cfbd 100%);
+  border: 2rpx solid var(--line);
+  margin-bottom: 32rpx;
+}
+
+.hero-img {
+  width: 100%;
+  height: 620rpx;
+  display: block;
+}
+
+/* ---------------- 信息 ---------------- */
+.info {
+  margin-bottom: 40rpx;
+}
+
+.work-title {
+  font-size: 38rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+  margin-bottom: 24rpx;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+
+.info-row-last {
+  border-bottom: none;
+}
+
+.info-label {
+  width: 180rpx;
+  flex-shrink: 0;
+  font-size: 26rpx;
+  color: var(--text-weak);
+}
+
+.info-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--winter-brown);
+  text-align: right;
+}
+
+.info-value-block {
+  text-align: left;
+  line-height: 1.7;
+}
+
+/* ---------------- 操作 ---------------- */
+.actions {
+  display: flex;
+}
+
+.share-btn {
+  flex: 1;
+  margin-right: 24rpx;
+}
+
+.actions .btn-ghost {
+  width: 200rpx;
+  flex-shrink: 0;
+}

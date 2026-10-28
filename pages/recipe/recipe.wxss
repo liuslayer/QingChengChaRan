@@ -1,0 +1,101 @@
+.intro {
+  margin-bottom: 40rpx;
+}
+
+.intro-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+  margin-bottom: 10rpx;
+}
+
+.intro-desc {
+  font-size: 26rpx;
+  color: var(--winter-brown);
+}
+
+.select-card {
+  padding-top: 6rpx;
+  padding-bottom: 6rpx;
+}
+
+/* 最后一个表单项不要下边线 */
+.form-item-last {
+  border-bottom: none !important;
+}
+
+/* ---------------- 操作按钮 ---------------- */
+.actions {
+  display: flex;
+  margin-bottom: 44rpx;
+}
+
+.act-reset {
+  width: 200rpx;
+  margin-right: 24rpx;
+}
+
+.act-search {
+  flex: 1;
+}
+
+/* ---------------- 结果 ---------------- */
+.result-head {
+  margin-bottom: 20rpx;
+}
+
+.tag-alt {
+  margin-left: 12rpx;
+  background: rgba(181, 113, 74, 0.12);
+  color: var(--autumn-red);
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+
+.result-label {
+  font-size: 26rpx;
+  color: var(--text-weak);
+}
+
+.result-value {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--winter-brown);
+}
+
+.result-tip {
+  margin-top: 22rpx;
+  background: rgba(181, 113, 74, 0.08);
+  border-radius: 14rpx;
+  padding: 20rpx 22rpx;
+}
+
+.result-tip-label {
+  font-size: 24rpx;
+  color: var(--autumn-red);
+  margin-bottom: 8rpx;
+  font-weight: 600;
+}
+
+.result-tip-text {
+  font-size: 26rpx;
+  color: var(--winter-brown);
+  line-height: 1.7;
+}
+
+/* ---------------- 未查询时的占位 ---------------- */
+.placeholder {
+  padding: 100rpx 40rpx;
+  text-align: center;
+}
+
+.placeholder-text {
+  font-size: 26rpx;
+  color: #c3b6a8;
+}

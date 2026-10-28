@@ -1,0 +1,75 @@
+<view class="page-wrap">
+
+  <!-- 顶部品牌 -->
+  <view class="brand">
+    <view class="brand-title">青城拾色 · 一叶一染</view>
+    <view class="brand-sub">茶 染 小 助 手</view>
+  </view>
+
+  <!-- 横幅：有视频时播放视频，否则显示图片 -->
+  <view class="banner">
+    <video
+      wx:if="{{bannerVideo && !videoError}}"
+      id="homeVideo"
+      class="banner-img"
+      src="{{bannerVideo}}"
+      poster="{{banner}}"
+      autoplay="{{true}}"
+      muted="{{true}}"
+      loop="{{true}}"
+      object-fit="cover"
+      controls="{{false}}"
+      show-center-play-btn="{{false}}"
+      show-play-btn="{{false}}"
+      show-fullscreen-btn="{{false}}"
+      enable-progress-gesture="{{false}}"
+      binderror="onVideoError"
+    />
+    <block wx:else>
+      <image
+        wx:if="{{!bannerError}}"
+        class="banner-img"
+        src="{{banner}}"
+        mode="aspectFill"
+        binderror="onBannerError"
+      />
+      <view wx:else class="banner-img img-fallback">青城山 · 茶染方巾</view>
+    </block>
+  </view>
+
+  <!-- 青城四色 -->
+  <view class="section">
+    <view class="section-title">青城四色</view>
+    <view class="colors">
+      <view
+        class="color-item"
+        wx:for="{{colors}}"
+        wx:key="name"
+        data-index="{{index}}"
+        bindtap="onToggleColor"
+      >
+        <view class="color-block" style="background: {{item.hex}};">
+          <text class="color-season">{{item.season}}</text>
+        </view>
+        <view class="color-name {{activeIndex === index ? 'color-name-active' : ''}}">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="color-desc card" wx:if="{{activeIndex >= 0}}">
+      <view class="color-desc-name">{{colors[activeIndex].name}}</view>
+      <view class="color-desc-text">{{colors[activeIndex].desc}}</view>
+    </view>
+    <view class="color-hint" wx:else>点一下颜色，看看它的来历</view>
+  </view>
+
+  <!-- 三个入口按钮 -->
+  <view class="section entry">
+    <view class="btn btn-primary" bindtap="goTutorial">看茶染教程</view>
+    <view class="btn btn-secondary" bindtap="goRecipe">查染料配方</view>
+    <view class="btn btn-ghost" bindtap="goWorks">我的作品</view>
+  </view>
+
+  <!-- 底部一句话 -->
+  <view class="slogan">用青城茶渣与落叶，染一方青城色</view>
+
+</view>

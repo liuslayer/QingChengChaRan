@@ -1,0 +1,68 @@
+<view class="page-wrap">
+
+  <!-- 导语 -->
+  <view class="intro card">
+    <view class="intro-title">茶染五步法</view>
+    <view class="intro-desc">从一把茶渣到一方青城色，只要五个步骤。课前先看一遍，动手时跟着做。</view>
+    <view class="muted">共 {{steps.length}} 个步骤 · 建议先看完整视频</view>
+  </view>
+
+  <!-- 主视频 -->
+  <view class="section">
+    <view class="section-title">完整流程视频</view>
+    <video
+      id="mainVideo"
+      class="main-video"
+      src="{{mainVideo.src}}"
+      poster="{{mainVideo.poster}}"
+      title="{{mainVideo.title}}"
+      object-fit="cover"
+      show-center-play-btn
+      show-fullscreen-btn
+      controls
+    />
+    <view class="muted video-note">视频为占位素材，可在 utils/assets.js 中替换成你的教学视频</view>
+  </view>
+
+  <!-- 分步教程 -->
+  <view class="section">
+    <view class="section-title">分步教程</view>
+
+    <view class="step" wx:for="{{steps}}" wx:key="title">
+      <view class="step-head">
+        <view class="step-no">{{item.index}}</view>
+        <view class="step-title">{{item.title}}</view>
+      </view>
+
+      <view class="step-img-wrap">
+        <image class="step-img" src="{{item.image}}" mode="widthFix" />
+      </view>
+
+      <view class="step-desc">{{item.desc}}</view>
+
+      <view class="step-points">
+        <view
+          class="step-point"
+          wx:for="{{item.points}}"
+          wx:for-item="point"
+          wx:for-index="pi"
+          wx:key="*this"
+        >
+          <text class="step-dot"></text>
+          <text class="step-point-text">{{point}}</text>
+        </view>
+      </view>
+
+      <video
+        wx:if="{{item.video}}"
+        class="step-video"
+        src="{{item.video}}"
+        object-fit="cover"
+        show-center-play-btn
+        controls
+        bindplay="onStepVideoPlay"
+      />
+    </view>
+  </view>
+
+</view>
