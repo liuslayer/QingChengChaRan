@@ -7,3 +7,6 @@ miniprogram_npm/
 
 # 大体积视频素材（15MB，已通过 packOptions.ignore 排除出代码包）
 videos/
+
+# 原始素材（视频合计约 90MB，仅本地保留）
+assets/

@@ -1,12 +1,15 @@
-这个目录用于放置你自己的真实素材（图片 / 视频）。
+本目录存放会被打包进小程序的图片素材。
 
-替换步骤：
-1. 把图片按下面命名放进本目录：
-     banner.jpg      首页横幅
-     step1.jpg ~ step5.jpg   教程 5 个步骤配图
-2. 打开 utils/assets.js，把对应的在线占位地址改成 '/images/xxx.jpg'。
-   （文件里已经在每一处写好了「换成真实素材时改为」的注释，照着改即可）
-3. 视频放到云存储或图床，把 utils/assets.js 里的 PLACEHOLDER_VIDEO 换成真实地址；
-   也可以直接在 utils/tutorialData.js 里改成微信视频号链接。
+当前已导入：
+  home-banner.jpg   首页横幅
+  process1.jpg      教程步骤 1「准备材料」配图
 
-页面代码不需要做任何改动。
+要新增 / 替换图片：
+  1. 把图片放进本目录（建议压缩到 300KB 以内、宽度 750px 左右）
+  2. 打开 utils/assets.js，把路径改成 '/images/文件名.jpg'
+
+视频不能放这里（单个代码包上限 2MB），必须上传到云开发存储，
+然后把文件 ID 填进 utils/assets.js 的 TUTORIAL_MAIN_VIDEO / TUTORIAL_STEP_VIDEOS。
+具体步骤见 docs/部署与注册指南.md 的「上传教程视频」一节。
+
+页面代码不需要改动。

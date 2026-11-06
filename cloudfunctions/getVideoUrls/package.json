@@ -1,0 +1,9 @@
+{
+  "name": "getVideoUrls",
+  "version": "1.0.0",
+  "description": "换取教程视频的临时访问地址",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

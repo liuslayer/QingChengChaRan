@@ -5,6 +5,14 @@
       {
         "type": "folder",
         "value": "videos"
+      },
+      {
+        "type": "folder",
+        "value": "assets"
+      },
+      {
+        "type": "folder",
+        "value": "cloudfunctions"
       }
     ],
     "include": []
@@ -35,6 +43,7 @@
     "condition": false
   },
   "compileType": "miniprogram",
+  "cloudfunctionRoot": "cloudfunctions/",
   "libVersion": "latest",
   "appid": "wxd03ebea6391da66f",
   "projectname": "qingchengcharan",
